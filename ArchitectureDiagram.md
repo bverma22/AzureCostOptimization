@@ -1,6 +1,11 @@
 # AzureCostOptimization
 (https://github.com/user-attachments/assets/f2236519-6970-4d7c-b1bb-1d2d51a6a4f9)
 
+
+Here's a **100-word summary** of the proposed cost optimization solution:
+
+To reduce costs in a read-heavy Azure serverless billing system, older billing records (over 90 days) are archived from Cosmos DB to Azure Blob Storage. An Azure Function periodically moves this data to lower-cost storage without changing the API interface or causing downtime. When a record is requested, the system first checks Cosmos DB; if not found, it retrieves the record from Blob Storage—ensuring seamless access with minimal latency. This read-through fallback pattern preserves performance while significantly reducing Cosmos DB storage and throughput costs. The approach is simple to implement, cost-efficient, and requires no changes to existing APIs.
+
 # Azure Billing Record Archival
 
 This repo contains:
